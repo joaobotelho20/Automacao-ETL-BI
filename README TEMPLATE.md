@@ -1,6 +1,6 @@
-# 📊 Automatização ETL com endpoint para BI test
+# 📊 Data Science Template
 
-criano uma automatização com script python para extrair arquivos de software local em aruivos excel e pdf, transformar e subir em pasta comum para desenvolvimento de relatorios e dashboards automatizados no negócio.
+Bem-vindo ao repositório do projeto de Data Science. Este documento fornece uma visão geral da estrutura do template de projeto
 
 ## 📁 Estrutura do Projeto
 
