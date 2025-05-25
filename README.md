@@ -1,30 +1,44 @@
-# Nome do Projeto
+# AUTOMAÇÃO DE ETL LOCAL COM PYTHON PARA APLICAÇÃO EM BI
 
 ![Badges](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
 
 ## 📝 Descrição
+Este projeto automatiza o processo de extração, transformação e carga (ETL) de dados a partir de arquivos gerados por um software local. Utilizando um script em Python, os dados são baixados automaticamente, processados e preparados para análise em uma ferramenta de Business Intelligence (BI).
 
-Uma descrição clara e concisa do seu projeto de ciência de dados. Explique o contexto geral, a motivação por trás do projeto e o que você pretende alcançar. Esta seção deve dar ao leitor uma visão geral completa do seu trabalho.
+Para garantir a execução periódica e automática, o script é acionado pelo Agendador de Tarefas do Windows, permitindo a atualização contínua dos dados sem necessidade de intervenção manual.
+
 
 ## 🎯 Problema de Negócio e Objetivos
 
 ### Problema de Negócio
-Descreva claramente o problema de negócio que você está tentando resolver. Explique o contexto, os desafios atuais e por que este problema é importante.
+Muitas empresas dependem de softwares locais para gerar dados essenciais para suas operações e tomadas de decisão. No entanto, o processo manual de download, tratamento e consolidação desses dados é trabalhoso, propenso a erros e consome tempo valioso da equipe.
+
+Sem uma automação eficiente, a atualização dos relatórios e dashboards de Business Intelligence fica comprometida, atrasando o acesso a informações críticas e impactando negativamente a agilidade e a qualidade das decisões estratégicas.
+
+Além disso, a falta de padronização e consistência nos dados processados manualmente pode gerar inconsistências nos relatórios, prejudicando a confiabilidade das análises e afetando os resultados do negócio.
 
 ### Objetivos
-- Objetivo principal do projeto
-- Objetivos secundários específicos
-- Métricas de sucesso que você definiu
-- Impacto esperado para o negócio
+- Automatizar a extração de dados a partir de arquivos gerados por software local, eliminando a necessidade de downloads manuais.
 
+- Processar e transformar os dados de forma eficiente, garantindo qualidade, consistência e padronização para análises.
+
+- Integrar os dados tratados a uma ferramenta de Business Intelligence para facilitar a criação de relatórios e dashboards dinâmicos.
+
+- Agendar a execução automática do script Python via Agendador de Tarefas do Windows, assegurando a atualização periódica e contínua dos dados.
+
+- Reduzir erros humanos e aumentar a produtividade no fluxo de manipulação e análise dos dados.
+
+- Facilitar a escalabilidade e manutenção do processo ETL com um código modular e reutilizável.
 
 ## 💡 Main Business Insights
 
-Destaque os 3-5 insights mais importantes descobertos durante o projeto:
+1. **Redução significativa do tempo gasto em tarefas manuais:** A automação do processo de download e tratamento dos dados liberou a equipe para focar em análises estratégicas, aumentando a produtividade e reduzindo erros humanos.
 
-1. **Insight 1**: Explicação do insight e seu impacto no negócio
-2. **Insight 2**: Explicação do insight e seu impacto no negócio
-3. **Insight 3**: Explicação do insight e seu impacto no negócio
+2. **Melhoria na qualidade e consistência dos dados:** A padronização das transformações garantiu que os relatórios e dashboards refletissem dados confiáveis, melhorando a confiança das áreas de negócio nas informações fornecidas.
+
+3. **Atualização automática e frequente dos relatórios:** Com o Agendador do Windows executando o script em horários programados, as decisões passaram a ser baseadas em dados atualizados, acelerando o tempo de resposta a mudanças e oportunidades.
+
+4. **Facilidade para escalar o processo de ETL:** O uso de Python modularizado permite ajustes rápidos para inclusão de novas fontes ou alterações no fluxo, suportando o crescimento da empresa sem aumento proporcional da carga de trabalho.
 
 Inclua visualizações relevantes que suportem esses insights.
 
