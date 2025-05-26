@@ -1,4 +1,4 @@
-# AUTOMAÇÃO DE ETL LOCAL COM PYTHON PARA APLICAÇÃO EM BI
+# Automação ETL local para BI
 
 ![Badges](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
 
