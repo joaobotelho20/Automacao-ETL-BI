@@ -1,0 +1,9 @@
+Iniciando ETL em 26/05/2025 11:13:00,32 
+Finalizado em 26/05/2025 11:14:37,04 
+ 
+Iniciando ETL em 26/05/2025 11:15:01,62 
+Finalizado em 26/05/2025 11:16:38,41 
+ 
+Iniciando ETL em 26/05/2025 11:23:01,76 
+Finalizado em 26/05/2025 11:24:38,43 
+ 
