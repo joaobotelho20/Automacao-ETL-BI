@@ -60,13 +60,13 @@ pyautogui.hotkey('alt', 'r')  # executando relatorio analitico 101
 
 # defininco intervao de busca
 hoje = datetime.today()
-primeiro_dia_mes = hoje.replace(day=1)
-primeiro_dia_formatado = primeiro_dia_mes.strftime('%d%m%Y')
 ontem = datetime.today() - timedelta(days=1)
 ontem_formatado = ontem.strftime('%d%m%Y')
+primeiro_dia_mes_anterior = hoje.replace(month=hoje.month - 1, day=1)
+primeiro_dia_mes_anterior_formatado = primeiro_dia_mes_anterior.strftime('%d%m%Y')
 
 pyautogui.press('tab', presses=2, interval=0.5)
-pyautogui.write(primeiro_dia_formatado, interval=0.1)  # data inicial
+pyautogui.write(primeiro_dia_mes_anterior_formatado, interval=0.1)  # data inicial
 pyautogui.press('tab')
 pyautogui.write(ontem_formatado, interval=0.1)  # data inicial
 pyautogui.press('tab')
@@ -82,7 +82,7 @@ pyautogui.press('tab', presses=2, interval=0.5)
 pyautogui.press('enter')
 time.sleep(3)
 
-pyautogui.write('evasao_analitico', interval=0.1)
+pyautogui.write('evasao_mes_atual', interval=0.1)
 pyautogui.press('tab', presses=7, interval=0.5)
 pyautogui.press('enter')
 time.sleep(2)
@@ -91,10 +91,9 @@ pyautogui.press('enter')
 pyautogui.hotkey('alt', 'l')
 
 pyautogui.hotkey('alt', 's')
+time.sleep(3)
 
 # fechando software
-time.sleep(3)
-# fechando 3 vezes para garantir que todas as janelas sejam fechadas
 pyautogui.hotkey('alt', 'f4')
 pyautogui.hotkey('alt', 'f4')
 pyautogui.hotkey('alt', 'f4')

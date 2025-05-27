@@ -7,3 +7,45 @@ Finalizado em 26/05/2025 11:16:38,41
 Iniciando ETL em 26/05/2025 11:23:01,76 
 Finalizado em 26/05/2025 11:24:38,43 
  
+
+ 
+Iniciando ETL em 26/05/2025 14:41:43,97 
+Finalizado em 26/05/2025 14:43:24,31 
+ 
+Iniciando Transforma√ß√£o XLSX em 26/05/2025 14:43:24,32 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 26/05/2025 14:43:25,62 
+ 
+Iniciando ETL em 27/05/2025  9:34:12,22 
+Finalizado em 27/05/2025  9:36:46,58 
+ 
+Iniciando Transforma√ß√£o XLSX em 27/05/2025  9:36:46,60 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 27/05/2025  9:36:53,08 
+ 
+Iniciando ETL em 27/05/2025 11:23:02,41 
+^CIniciando ETL em 27/05/2025 17:48:34,03 
+Traceback (most recent call last):
+  File "C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI\ETL-acadweb.py", line 69, in <module>
+    pyautogui.write(primeiro_dia_mes_anterior, interval=0.1)  # data inicial
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python311\site-packages\pyautogui\__init__.py", line 594, in wrapper
+    returnVal = wrappedFunction(*args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python311\site-packages\pyautogui\__init__.py", line 1682, in typewrite
+    for c in message:
+TypeError: 'datetime.datetime' object is not iterable
+Finalizado em 27/05/2025 17:49:21,32 
+ 
+Iniciando Transforma√ß√£o XLSX em 27/05/2025 17:49:21,33 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 27/05/2025 17:49:24,72 
+ 
+Iniciando ETL em 27/05/2025 17:52:16,51 
+Finalizado em 27/05/2025 17:53:56,63 
+ 
+Iniciando Transforma√ß√£o XLSX em 27/05/2025 17:53:56,65 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 27/05/2025 17:53:58,10 
+ 
