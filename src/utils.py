@@ -4,6 +4,7 @@ import logging
 import pyautogui
 import time
 from pyautogui import ImageNotFoundException
+import pandas as pd
 
 def obter_credenciais(*nomes_variaveis, dotenv_path=None):
     """
@@ -82,3 +83,53 @@ def detectar_e_aceitar_popup(imagem_popup: str, timeout: int = 10, intervalo: fl
     
     print("Pop-up não detectado dentro do tempo limite.")
     return False
+
+def padronizar_datas(df, coluna='Data'):
+    """
+    Padroniza a coluna de data de um DataFrame para o tipo datetime64[ns].
+
+    Args:
+        df (pd.DataFrame): DataFrame com a coluna de data.
+        coluna (str): Nome da coluna que contém a data.
+
+    Returns:
+        pd.DataFrame: DataFrame com a coluna convertida para datetime.
+    """
+
+    # Pular se já for datetime64
+    if pd.api.types.is_datetime64_any_dtype(df[coluna]):
+        print(f"Coluna '{coluna}': Já está no formato datetime64, mantido como está.")
+        return df
+
+    try:
+        # Verificar o tipo de separador mais comum
+        if df[coluna].dropna().str.contains('/', regex=False).all():
+            print(f"Coluna '{coluna}': Convertendo datas com '/'")
+            df[coluna] = pd.to_datetime(df[coluna], dayfirst=True, errors='coerce')
+        elif df[coluna].dropna().str.contains('-', regex=False).all():
+            print(f"Coluna '{coluna}': Convertendo datas com '-' (formato ISO)")
+            df[coluna] = pd.to_datetime(df[coluna], errors='coerce')
+        else:
+            print(f"Coluna '{coluna}': Padrão misto, tentativa geral de conversão")
+            df[coluna] = pd.to_datetime(df[coluna], dayfirst=True, errors='coerce')
+
+        num_nulos = df[coluna].isna().sum()
+        if num_nulos > 0:
+            print(f"Atenção: {num_nulos} valores não puderam ser convertidos em '{coluna}'")
+    except Exception as e:
+        print(f"Erro ao converter a coluna '{coluna}': {e}")
+    
+    return df
+
+def normalizar_texto(texto):
+    import re
+    import unicodedata
+    if pd.isna(texto):
+        return texto
+    # Transforma em string, caixa baixa
+    texto = str(texto).lower()
+    # Remove acentos
+    texto = unicodedata.normalize('NFKD', texto).encode('ASCII', 'ignore').decode('utf-8')
+    # Remove espaços extras
+    texto = re.sub(r'\s+', ' ', texto).strip()
+    return texto
