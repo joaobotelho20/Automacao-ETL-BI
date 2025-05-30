@@ -4,22 +4,9 @@ import time
 import pygetwindow as gw
 from datetime import datetime, timedelta
 import logging
-import json
+from utils import obter_credenciais, configurar_logging, detectar_e_aceitar_popup
 
-def ler_credenciais(caminho_arquivo='credenciais.json'):
-    with open(caminho_arquivo, 'r') as f:
-        dados = json.load(f)
-    return dados
-
-
-
-# Configura o logging
-logging.basicConfig(
-    filename='ETL_script.log',  # arquivo onde o log será salvo
-    level=logging.INFO,     # nível mínimo do log (INFO, DEBUG, WARNING, ERROR)
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    datefmt='%Y-%m-%d %H:%M:%S'
-)
+configurar_logging(path='ETL.log', nivel=logging.INFO)
 
 pyautogui.FAILSAFE = True
 
@@ -32,21 +19,22 @@ janela = gw.getWindowsWithTitle("acadwebcursos")[0]
 janela.activate()
 time.sleep(2)
 
-pyautogui.PAUSE = 1
 
-credenciais = ler_credenciais()
-email = credenciais['email']
-senha = credenciais['senha']
+email, senha = obter_credenciais("EMAIL", "SENHA", dotenv_path=r'C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI\config\credenciais.env')
 
 pyautogui.doubleClick(x=853, y=370)  # ajuste a posição do campo de usuário
-pyautogui.write(email, interval=0.1)
+pyautogui.PAUSE = 1
+pyautogui.write(email, interval=0.06)
 # pyautogui.click(x=716, y=396)
 pyautogui.press('tab')
-pyautogui.write(senha, interval=0.1)
+pyautogui.write(senha, interval=0.06)
 pyautogui.press('enter')
-time.sleep(3)
-
+time.sleep(2)
 pyautogui.press('enter')  # entrando unidade
+time.sleep(3)
+detectar_e_aceitar_popup(imagem_popup= r'C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI\src\popup_login.png', timeout = 3, intervalo = 0.5)
+
+
 time.sleep(10)
 pyautogui.press('esc')  # removendo popup de aviso inicial
 
@@ -86,7 +74,7 @@ pyautogui.write('evasao_mes_atual', interval=0.1)
 pyautogui.press('tab', presses=7, interval=0.5)
 pyautogui.press('enter')
 time.sleep(2)
-pyautogui.write(r'C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI\Raw Data', interval=0.1)
+pyautogui.write(r'C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI\data\raw', interval=0.1)
 pyautogui.press('enter')
 pyautogui.hotkey('alt', 'l')
 

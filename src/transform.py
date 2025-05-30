@@ -80,6 +80,8 @@ for df_name in df_list:
     df_filtrado = df[mask_inicio_data & mask_outros_valores]
     df = df[~df.isin(df_filtrado)]
 
+    df = df[df['situacao'].notna() & (df['situacao'] != '')]
+
     df = padronizar_datas(df, coluna='data')
 
     df['nome'] = df['nome'].apply(normalizar_texto)

@@ -49,3 +49,45 @@ Iniciando Transforma√ß√£o XLSX em 27/05/2025 17:53:56,65
 Coluna 'data': J· est· no formato datetime64, mantido como est·.
 Finalizado em 27/05/2025 17:53:58,10 
  
+Iniciando ETL em 27/05/2025 22:05:09,12 
+Finalizado em 27/05/2025 22:06:49,39 
+ 
+Iniciando Transforma√ß√£o XLSX em 27/05/2025 22:06:49,41 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 27/05/2025 22:06:52,96 
+ 
+Iniciando ETL em 27/05/2025 22:07:09,48 
+Finalizado em 27/05/2025 22:08:49,73 
+ 
+Iniciando Transforma√ß√£o XLSX em 27/05/2025 22:08:49,74 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 27/05/2025 22:08:51,02 
+ 
+Iniciando ETL em 28/05/2025 16:18:01,24 
+Finalizado em 28/05/2025 16:19:42,16 
+ 
+Iniciando Transforma√ß√£o XLSX em 28/05/2025 16:19:42,18 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 28/05/2025 16:19:45,92 
+ 
+Iniciando ETL em 28/05/2025 16:19:55,93 
+Finalizado em 28/05/2025 16:21:35,96 
+ 
+Iniciando Transforma√ß√£o XLSX em 28/05/2025 16:21:35,96 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 28/05/2025 16:21:37,21 
+ 
+Iniciando ETL em 29/05/2025  9:17:21,71 
+Finalizado em 29/05/2025  9:19:07,98 
+ 
+Iniciando Transforma√ß√£o XLSX em 29/05/2025  9:19:08,14 
+Iniciando ETL em 29/05/2025  9:20:13,33 
+Iniciando ETL em 29/05/2025  9:21:34,64 
+Finalizado em 29/05/2025  9:23:14,91 
+ 
+Iniciando Transforma√ß√£o XLSX em 29/05/2025  9:23:14,93 
+Coluna 'data': J· est· no formato datetime64, mantido como est·.
+Finalizado em 29/05/2025  9:23:16,27 
+ 
+Iniciando ETL em 29/05/2025 11:23:02,16 
+Iniciando ETL em 30/05/2025  9:06:22,47 

@@ -1,5 +1,8 @@
 credenciais.json
-Raw Data/
-Processed Data/
+data/
 temp/
 agenteweb.exe
+config/credenciais.json
+credenciais.env
+src/__pycache__/
+venv311/

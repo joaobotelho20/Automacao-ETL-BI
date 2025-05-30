@@ -106,7 +106,7 @@ data-science-project/
 │   ├── 📁 reporting/          # Notebooks para geração de relatórios
 │   └── 📁 experiments/        # Notebooks para experimentos e testes
 │
-├── 📁 source code/
+├── 📁 src/
 │   ├── 📁 data/               # Scripts para download ou geração de dados
 │   ├── 📁 features/           # Scripts para criação de features a partir dos dados brutos
 │   ├── 📁 models/             # Scripts para treinamento e avaliação de modelos
@@ -123,7 +123,7 @@ data-science-project/
 │
 ├── 📋 requirements.txt        # Lista de dependências do projeto
 ├── 📖 README.md               # Descrição do projeto e instruções modelo
-├── 📖 README TEMPLATE.md      # Descrição do template estruturado aqui
+├── 📖 task_execute.bat        # Executável windows para automação de agendamento
 └── 🚫 .gitignore              # Arquivo gitignore
 ```
 
