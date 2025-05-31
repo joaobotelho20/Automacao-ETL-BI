@@ -1,41 +1,35 @@
-import sys
 import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-# Now your existing imports
-from src.extract_acadweb import main as main_extract
-
-
+import sys
 import logging
-from src.extract_acadweb import main as main_extract
-from src.transform import main as main_transform
-from src.utils import configurar_logging
 
-def pipeline_etl():
-    """Orquestrador principal do fluxo ETL"""
-    logging.info("Iniciando pipeline ETL")
-    
-    try:
-        logging.info("Iniciando extração de dados")
-        main_extract()  # Chamada direta da função importada
-        logging.info("Extração concluída com sucesso")
-        
-    except Exception as e:
-        logging.error(f"Erro na extração: {e}", exc_info=True)
-        return
+# Adiciona a pasta src ao sys.path para permitir importações
+SRC_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.append(SRC_PATH)
 
-    try:
-        logging.info("Iniciando transformação de dados")
-        main_transform()  # Chamada direta da função importada
-        logging.info("Transformação concluída com sucesso")
-        
-    except Exception as e:
-        logging.error(f"Erro na transformação: {e}", exc_info=True)
-        return
+# Importa os módulos e renomeia os main() para melhor clareza
+from extract_acadweb import main as extract_main
+from transform import main as transform_main
+from transform_comercial import main as transform_comercial_main
+from utils import configurar_logging  # se você estiver usando
 
-    logging.info("Pipeline ETL finalizado com sucesso")
+def run_pipeline():
+
+    configurar_logging(path=r'C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI\logs\ETL.log', nivel=logging.INFO)
+    logging.info("Iniciando pipeline ETL via funcoes main()")
+
+    # Etapa 1: Extração
+    logging.info("Extracao iniciada")
+    extract_main()
+
+    # Etapa 2: Transformação
+    logging.info("Transformacao iniciada")
+    transform_main()
+
+    # Etapa 3: Transformação Comercial
+    logging.info("Transformacao Comercial iniciada")
+    transform_comercial_main()
+
+    logging.info("Pipeline ETL finalizada com sucesso")
 
 if __name__ == "__main__":
-    configurar_logging(path='ETL.log', nivel=logging.INFO)
-    pipeline_etl()
+    run_pipeline()

@@ -1,12 +1,4 @@
 @echo off
-cd "C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI"
+cd "C:\Users\USER\Desktop\GitHub\Automacao-ETL-BI\script"
 
-echo Iniciando ETL em %DATE% %TIME% >> registro_automacao.txt
-"C:\Program Files\Python311\python.exe" ETL-acadweb.py >> registro_automacao.txt 2>&1
-echo Finalizado em %DATE% %TIME% >> registro_automacao.txt
-echo. >> registro_automacao.txt
-
-echo Iniciando Transformação XLSX em %DATE% %TIME% >> registro_automacao.txt
-"C:\Program Files\Python311\python.exe" Data_transform.py >> registro_automacao.txt 2>&1
-echo Finalizado em %DATE% %TIME% >> registro_automacao.txt
-echo. >> registro_automacao.txt
+"C:\Program Files\Python311\python.exe" ETL_acadweb.py 

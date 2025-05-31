@@ -1,1 +1,0 @@
-from .utils import obter_credenciais, configurar_logging, detectar_e_aceitar_popup

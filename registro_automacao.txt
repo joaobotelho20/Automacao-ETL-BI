@@ -1,8 +1,0 @@
-Iniciando ETL em 30/05/2025 11:23:02,37 
-C:\Program Files\Python311\python.exe: can't open file 'C:\\Users\\USER\\Desktop\\GitHub\\Automacao-ETL-BI\\ETL-acadweb.py': [Errno 2] No such file or directory
-Finalizado em 30/05/2025 11:23:02,47 
- 
-Iniciando Transformação XLSX em 30/05/2025 11:23:02,62 
-C:\Program Files\Python311\python.exe: can't open file 'C:\\Users\\USER\\Desktop\\GitHub\\Automacao-ETL-BI\\Data_transform.py': [Errno 2] No such file or directory
-Finalizado em 30/05/2025 11:23:02,72 
- 
