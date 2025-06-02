@@ -133,3 +133,39 @@ def normalizar_texto(texto):
     # Remove espaços extras
     texto = re.sub(r'\s+', ' ', texto).strip()
     return texto
+
+def detectar_e_aguardar_popup(imagem_popup: str, timeout: int = 30, intervalo: float = 5.0) -> bool:
+    """
+    Aguarda o desaparecimento de um pop-up na tela baseado em uma imagem.
+
+    Args:
+        imagem_popup (str): Caminho para a imagem do pop-up que será usada para detecção.
+        timeout (int): Tempo máximo em segundos para aguardar o desaparecimento do pop-up.
+        intervalo (float): Intervalo em segundos entre tentativas de detecção.
+
+    Returns:
+        bool: True se o pop-up desapareceu dentro do tempo limite, False se o tempo expirou.
+    """
+    tempo_inicial = time.time()
+
+    # Aguarda o pop-up aparecer
+    while time.time() - tempo_inicial < timeout:
+        localizacao = pyautogui.locateOnScreen(imagem_popup, confidence=0.8)
+        if localizacao is not None:
+            print("Pop-up detectado. Aguardando desaparecer...")
+            break
+        time.sleep(intervalo)
+    else:
+        print("Pop-up não apareceu dentro do tempo limite.")
+        return False
+
+    # Aguarda o pop-up desaparecer
+    while time.time() - tempo_inicial < timeout:
+        localizacao = pyautogui.locateOnScreen(imagem_popup, confidence=0.8)
+        if localizacao is None:
+            print("Pop-up desapareceu. Continuando o script.")
+            return True
+        time.sleep(intervalo)
+
+    print("O pop-up não desapareceu dentro do tempo limite.")
+    return False
